@@ -1,25 +1,53 @@
 import './App.css';
-import logo from './logo.svg';
+import randomColor from 'randomcolor';
+import { useState } from 'react';
+import Button from './Button';
+import Header from './Heading';
+import MainContainer from './MainContainer';
 
 function App() {
+  // Define state variables
+  const [color, setColor] = useState('');
+  const [colorHue, setColorHue] = useState('');
+  const [colorLuminosity, setColorLuminosity] = useState('');
+
   return (
+    // Use function components for Heading, Container and Button (imported)
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header />
+      <div>
         <p>
-          Edit <code>src/App.js</code> and save to reload..
+          <label htmlFor="hue">Pick the hue you want: </label>
+          <input
+            id="hue"
+            onChange={(event) => setColorHue(event.target.value)}
+          />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          <label htmlFor="luminosity">
+            Pick the luminosity of your color:{' '}
+          </label>
+          <input
+            id="luminosity"
+            onChange={(event) => setColorLuminosity(event.target.value)}
+          />
+        </p>
+        <p>
+          <Button
+            text="Generate a random color"
+            onClick={() => {
+              setColor(
+                randomColor.randomColor({
+                  luminosity: colorLuminosity,
+                  hue: colorHue,
+                }),
+              );
+            }}
+          />
+        </p>
+        <MainContainer color={color} />
+      </div>
     </div>
   );
 }
-
 export default App;
