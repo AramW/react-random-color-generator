@@ -12,7 +12,6 @@ function App() {
   const [colorLuminosity, setColorLuminosity] = useState('');
 
   return (
-    // Use function components for Heading, Container and Button (imported)
     <div className="App">
       <Header />
       <div>
