@@ -17,5 +17,5 @@ function Button(props) {
 export default Button;
 
 // Rewrite the emotion style entirely //
-// You can check some cheatsheet on the learning platform for this //
-// and then on line 15, return a normal html button //
+// check cheat sheet on the learning platform for this //
+// line 15, return a normal html button //
