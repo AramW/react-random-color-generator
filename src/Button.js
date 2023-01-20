@@ -19,5 +19,3 @@ export default Button;
 // Rewrite the emotion style entirely //
 // You can check some cheatsheet on the learning platform for this //
 // and then on line 15, return a normal html button //
-// and then use your emotion to style the button //
-// what you are currently doing is trying to use emotion to create a react component but it wont work like this //
